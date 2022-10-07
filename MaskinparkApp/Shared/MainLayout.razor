@@ -1,0 +1,69 @@
+﻿@inherits LayoutComponentBase
+
+@*<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>*@
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maskinpark</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LMS.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+                <NavMenu></NavMenu>
+    </header>
+    
+    <div class="container-fluid main mx-3">
+        <div class="row">
+        <div class="card card-rounded col-2">
+            <MaskinparkApp.Pages.MachineOverview />
+        </div>
+        <div class="col-10">
+        <main role="main" class="pb-3 mx-3">
+            @Body
+        </main>
+        </div>
+        </div>
+    </div>
+
+    <!--Ett popup fönster för partial views-->
+    <div class="modal fade" id="modalPartial" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="ModalContent">
+                <div class="modal-body" id="ModalBody">
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <footer class="sectioncolors">
+            <div class="container-fluid">
+                <div class="row my-1 pb-2 mx-4">
+            <table class="mt-3"><tr>
+                <td class="text-start">Project: Maskinpark</td>
+                <td class="text-start">Dennis Järnstål</td>
+                <td class="text-end">&copy; 2022</td>   
+            </tr>            
+            </table>
+                </div>
+            </div>
+    </footer>
+</body>
+
